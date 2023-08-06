@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunrise app</title>
+  <link rel="stylesheet" href="toastify.css">
+    
+  <link rel="apple-touch-icon" href="h.jpg">
+  <link rel="icon" type="image/png" href="h.jpg"/>
+   <style>
+    .drink {
+    
+      border-bottom: 4px solid;
+      margin-top: 3px;
+    }
+    
+  </style>
+ 
+    
+    
+    
+    
+</head>
+<body>
+    
+  <section class="header">
+    <h1 class="home">loppy</h1>
+    <p style="color: white">Lopy Bar</p>
+      
+    <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('softDrinks')">SOFT DRINKS <span class="arrow">▼</span></button>
+        <ul class="details hidden" id="softDrinks" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+        <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('water')">Water <span class="arrow">▼</span></button>
+        <ul class="details hidden" id="water" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+       <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('hotDrinks')">Hot Drinks <span class="arrow">▼</span></button>
+        <ul class="details hidden" id="hotDrinks" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+      
+      <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('classicCocktails')">Classic Cocktails <span class="arrow">▼</span></button>
+        <ul class="details hidden" id="classicCocktails" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+      <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('signatureMocktails')"> Signature Mocktails <span class="arrow">▼</span></button>
+        <ul class="details hidden" id="signatureMocktails" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+      <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('signatureCocktails')">Signature Cocktails<span class="arrow">▼</span></button>
+        <ul class="details hidden" id="signatureCocktails" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+       <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('energyDrink')">Energy Drink<span class="arrow">▼</span></button>
+        <ul class="details hidden" id="energyDrink" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+      <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('squeezedFruitJuice')">Squeezed FruitJuice<span class="arrow">▼</span></button>
+        <ul class="details hidden" id="squeezedFruitJuice" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+      <div class="button-container">
+      <div style="margin-top: 20px;"> 
+        <button class="button" onclick="toggleDetails('houseWine')">House Wine<span class="arrow">▼</span></button>
+        <ul class="details hidden" id="houseWine" style="background-color: rgba(205, 92, 92, 0.2);border-radius: 7px;"></ul>
+      </div>
+    </div>
+      
+  </section>
+ 
+   
+   
+  <script>          
+      
+      
+      
+    function toggleDetails(buttonId) {
+      var detailsList = document.getElementById(buttonId);
+      detailsList.classList.toggle('hidden'); // Toggle the hidden class
+
+      if (!detailsList.classList.contains('hidden')) {
+        detailsList.innerHTML = ""; 
+        
+        var drinks = [];
+
+        if (buttonId === "softDrinks") {
+          drinks = [
+            { name: "Coca-Cola", price: " USD 2.00", image: "ca.jpg"},
+            { name: "Cola Light", price: " USD 2.00", image: "cal.jpg" },
+            { name: "Sprite", price: " USD 2.00", image: "ds.jpg" },
+            { name: "Fanta", price: " USD 2.00", image: "ff.jpg" },
+              { name: "Tonic Water", price: " USD 2.00", image: "sp.jpg" },
+              { name: "Soda Water", price: " USD 2.00", image: "gg.jpg" },
+          ];
+        } else if (buttonId === "water") {
+          drinks = [
+            { name: "Still water,small", price: " USD 2.00", image: "w2.jpg" },
+           { name: "Still water,large", price: " USD 3.00", image: "w3.jpg" },
+           { name: "SparklingWater", price: " USD 3.00", image: "w1.jpg" },   
+          
+          ];
+        }
+          
+        else if (buttonId === "hotDrinks") {
+          drinks = [
+             { name: "Espresso", price: " USD 2.00",image: "coca-cola.jpg", image: "h1.jpg"  },
+               { name: "American Coffee", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h2.jpg" },
+                { name: "Cappuccino", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h3.jpg" },
+              { name: "caffe latte", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h4.jpg" },
+               { name: "Turkish coffee", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h5.jpg" },
+               { name: "French coffee", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h6.jpg" },
+              { name: "Tea", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h7.jpg" },
+              { name: "Nescafe", price: " USD 2.00" ,image: "coca-cola.jpg", image: "h8.jpg"},
+          ];
+        }
+          
+          else if (buttonId === "classicCocktails") {
+          drinks = [
+            { name: "Sex ON THE BEACH", price: " USD 7.00" ,image: "c1.jpg" },
+           { name: "Tequil Sun Rise", price: " USD 7.00", image: "c6.png"},
+          { name: "Cosmopolitan", price: " USD 5.00" ,image: "c2.jpg" },
+              { name: "Collins", price: " USD 7.00" ,image: "c11.jpg" },
+              { name: "WHISKY SOUR", price: " USD 7.00" ,image: "c12.jpg" },
+              { name: "Pina Colda", price: " USD 5.00" ,image: "c7.png" },
+              { name: "Caipiroska", price: " USD 5.00" ,image: "c3.jpg" },
+              { name: "Espresso Martini", price: " USD 7.00" ,image: "c9.jpg" },
+              { name: "Long Island Iced Tea", price: " USD 7.00" ,image: "c8.png" },
+              { name: "MAI TAI", price: " USD 7.00" ,image: "c4.jpg" },
+              { name: "Margarita", price: " USD 7.00" ,image: "c5.jpg" },
+               { name: "BLOODY MARY", price: " USD 7.00" ,image: "c10.jpg" }, 
+              
+          ];
+        }
+           
+        else if (buttonId === "signatureMocktails") {
+          drinks = [
+           { name: "Breeze of life", price: " USD 4.00" ,image: "s1.jpg" },
+           { name: "Coconut Splash", price: " USD 4.00" ,image: "s3.jpg" },
+              { name: "Aqua Joy", price: " USD 4.00" ,image: "s5.jpg" },
+              
+               { name: " Jalapeno Magness", price: " USD 4.00" ,image: "s7.jpg" },
+              
+               { name: "Mamlouk Iced Coffee", price: " USD 4.00" ,image: "s4.jpg" },
+              
+                { name: "Meraki Iced Tea", price: " USD 4.00",image: "s2.jpg" },
+              
+                { name: "Sun Ray Benefits", price: " USD 4.00" ,image: "s6.jpg"},
+          ];
+        }
+         
+          else if (buttonId === "signatureCocktails") {
+          drinks = [
+            { name: "Sunrise Organic Garden", price: " USD 7.00",image: "sc.jpg" },
+            { name: "Yades Iced Tea", price: " USD 7.00",image: "sc2.jpg" },
+              
+              { name: "Sunrise lovers", price: " USD 7.00",image: "sc3.jpg" },
+              
+              { name: "Blue Island", price: " USD 7.00",image: "sc7.jpg" },
+              
+                 { name: "Bella Story", price: " USD 7.00",image: "sc5.jpg" },
+                
+              { name: "Sun Rise Boulevard", price: " USD 7.00",image: "sc4.jpg" },
+              { name: "White Hills Colada", price: " USD 7.00",image: "sc6.jpg" },
+          ];
+        }
+          
+          else if (buttonId === "energyDrink") {
+          drinks = [
+            { name: "Red Bull", price: " USD 6.00",image: "r.jpg" },
+            { name: "Red Bull sugar free", price: " USD 6.00",image: "r2.jpg" },
+            // أضف المشروبات الباردة الأخرى هنا
+          ];
+        }
+        
+          else if (buttonId === "squeezedFruitJuice") {
+          drinks = [
+            { name: "Mango", price: " USD 4.00",image: "ss.jpg" },
+            { name: "Orange", price: " USD 4.00",image: "ss2.jpg" },
+               { name: "Guava", price: " USD 4.00",image: "ss3.jpg" },
+               { name: "Strawberry", price: " USD 4.00",image: "ss4.jpg" },
+            // أضف المشروبات الباردة الأخرى هنا
+          ];
+        }
+          
+            else if (buttonId === "houseWine") {
+          drinks = [
+            { name: "WHITE WINE", price:  " USD 29.00",image: "wi.jpg" },
+            { name: "ROSE WINE", price: " USD 29.00",image: "wi2.jpg" },
+              
+              { name: "RED WINE", price: " USD 29.00",image: "wi3.jpg" },
+            // أضف المشروبات الباردة الأخرى هنا
+          ];
+        }  
+          
+        drinks.forEach(function(drink) {
+          var listItem = document.createElement("li");
+          var drinkInfo = document.createElement("div");
+          drinkInfo.classList.add("drink");
+          var drinkImg = document.createElement("img");
+          drinkImg.src = drink.image;
+          drinkImg.alt = drink.name;
+          drinkImg.title = drink.name;
+          drinkInfo.appendChild(drinkImg);
+          var drinkName = document.createElement("p");
+          drinkName.textContent = drink.name + "  price: " + drink.price;
+          drinkInfo.appendChild(drinkName);
+          listItem.appendChild(drinkInfo);
+          detailsList.appendChild(listItem);
+            
+            
+  
+
+      listItem.appendChild(drinkInfo);
+      detailsList.appendChild(listItem);
+        });
+      }
+    }
+      
+  </script>
+    
+</body>
+</html>
